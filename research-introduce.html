@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LoL Player Type — Research Introduction</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { max-width: 780px; margin: 0 auto; padding: 2rem 1.2rem 4rem;
+         font: 16px/1.65 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+  h1 { font-size: 1.7rem; margin-bottom: .2rem; }
+  .sub { opacity: .7; margin-top: 0; }
+  h2 { font-size: 1.2rem; margin-top: 2.2rem; border-bottom: 1px solid rgba(128,128,128,.25); padding-bottom: .25rem; }
+  a { color: #2563eb; } @media (prefers-color-scheme: dark) { a { color: #7ab0ff; } }
+  ul, ol { padding-left: 1.25rem; }
+  li { margin: .3rem 0; }
+  .refs li { margin: .6rem 0; }
+  code { background: rgba(128,128,128,.15); padding: .1em .35em; border-radius: 4px; }
+  footer { margin-top: 3rem; font-size: .85rem; opacity: .65; }
+</style>
+</head>
+<body>
+  <h1>LoL Player Type — Research Introduction</h1>
+  <p class="sub">A non-commercial academic study of laner behavioral archetypes in
+  <em>League of Legends</em>, using the official Riot Games API.</p>
+
+  <h2>1. Purpose &amp; necessity</h2>
+  <p>Each lane role in <em>League of Legends</em> demands a distinct pattern of play, and
+  even within the same tier and role, players differ in how they control vision, farm,
+  fight, contest objectives, and support their team. These differences form recurring
+  <strong>behavioral archetypes</strong> that are not visible in simple win-rate or
+  aggregate statistics.</p>
+  <p>Understanding these archetypes — and how they change across skill tiers and across
+  regions — matters because it reveals the concrete behaviors that separate skill levels,
+  informs coaching and learning, and gives an objective, data-driven picture of how the
+  game is actually played worldwide. Answering this requires <strong>per-player
+  behavioral data</strong> sampled consistently across the entire ranked ladder and every
+  region, which is only obtainable through the Riot API at a production scale.</p>
+
+  <h2>2. Research method</h2>
+  <ul>
+    <li><strong>Data window:</strong> the 2025 competitive splits — <strong>Split 1 and
+        Split 2</strong>.</li>
+    <li><strong>Sampling:</strong> a <strong>random sample of 300 laners</strong> for
+        <strong>each division (sub-tier), each lane, in every region</strong> — i.e.
+        across Iron IV → Challenger, for TOP / JUNGLE / MIDDLE / BOTTOM / UTILITY, in all
+        Riot regions (KR, NA, EUW, EUNE, LAN, LAS, BR, OCE, JP, and others).</li>
+    <li><strong>Features:</strong> each player is summarized from recent Ranked Solo/Duo
+        (queue 420) matches into behavioral metrics — vision score, KDA, creep score,
+        damage to champions, turret damage, crowd-control time, and assists.</li>
+    <li><strong>Analysis:</strong> metrics are normalized and, per role, reduced and
+        grouped with <strong>unsupervised clustering</strong> (e.g. K-means with silhouette
+        evaluation) to derive behavioral archetypes, whose prevalence is then compared
+        across tiers and regions.</li>
+    <li><strong>APIs used:</strong> LEAGUE-V4, MATCH-V5, SUMMONER-V4 (queue 420 only).</li>
+  </ul>
+  <p>All results are reported <strong>in aggregate</strong>; PUUIDs are used only as
+  transient lookup keys and are never published.</p>
+
+  <h2>3. Positive impact on League of Legends R&amp;D</h2>
+  <p>A clear, quantitative map of how play styles differ by tier and region can support
+  Riot's own research and development:</p>
+  <ul>
+    <li><strong>Balance:</strong> objective evidence of how roles and behaviors shift with
+        skill, useful for champion and system balancing.</li>
+    <li><strong>Matchmaking &amp; retention:</strong> behavioral archetypes can inform
+        matchmaking quality and help identify play patterns linked to engagement.</li>
+    <li><strong>Player growth &amp; coaching:</strong> showing players the measurable
+        behaviors that distinguish higher tiers gives concrete, per-role paths to improve
+        — aligned with Riot's goal of helping players get better and track growth.</li>
+    <li><strong>Regional insight:</strong> cross-region comparison highlights how the meta
+        and play styles differ globally.</li>
+  </ul>
+  <p>The project aims to be a constructive, policy-compliant resource that benefits the
+  wider <em>League of Legends</em> ecosystem.</p>
+
+  <h2>4. References</h2>
+  <p>This study builds on prior work applying <strong>data clustering</strong> to learner
+  and game-player behavioral patterns:</p>
+  <ol class="refs">
+    <li>Park, S., &amp; Kim, S. (2022). <a href="https://www.mdpi.com/2071-1050/14/23/15574">Learning
+        Performance Styles in Gamified College Classes Using Data Clustering</a>.
+        <em>Sustainability</em>, 14(23), 15574. — K-means clustering with silhouette
+        analysis to identify learners' performance styles.</li>
+    <li>Park, S., &amp; Kim, S. (2022). <a href="https://www.mdpi.com/2076-3417/12/23/12451">K-RBBSO
+        Algorithm: A Result-Based Stochastic Search Algorithm in Big Data</a>.
+        <em>Applied Sciences</em>, 12(23), 12451. — a clustering-optimization algorithm
+        (K-means-initiated rapid biogeography-based silhouette optimization).</li>
+    <li>Park, S.-J., Kang, B.-S., Kim, S.-S., &amp; Kim, S.-G. (2017).
+        <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07425649">Data
+        Clustering-Based Analysis of Player Types in Gamification Environments</a>.
+        <em>Journal of Korea Game Society</em>, 17(6). — K-means clustering and Bartle
+        player typology to analyze game-player types.</li>
+  </ol>
+
+  <p style="margin-top:2rem">Source code and full proposal:
+  <a href="https://github.com/sungjinpark-vibe/lol_player_type">github.com/sungjinpark-vibe/lol_player_type</a>
+  · Contact: <a href="mailto:say121290@gmail.com">say121290@gmail.com</a></p>
+
+  <footer>
+    This project isn't endorsed by Riot Games and doesn't reflect the views of Riot Games.
+    League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc.
+  </footer>
+</body>
+</html>

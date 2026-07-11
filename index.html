@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LoL Player Type — Behavioral Archetype Research</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { max-width: 760px; margin: 0 auto; padding: 2rem 1.2rem 4rem;
+         font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+  h1 { font-size: 1.6rem; margin-bottom: .2rem; }
+  .sub { opacity: .7; margin-top: 0; }
+  h2 { font-size: 1.15rem; margin-top: 2rem; }
+  code { background: rgba(128,128,128,.15); padding: .1em .35em; border-radius: 4px; }
+  a { color: #2563eb; }
+  @media (prefers-color-scheme: dark) { a { color: #7ab0ff; } }
+  ul { padding-left: 1.2rem; }
+  footer { margin-top: 3rem; font-size: .85rem; opacity: .65; }
+</style>
+</head>
+<body>
+  <h1>LoL Player Type</h1>
+  <p class="sub">Behavioral Archetype Research · non-commercial academic project</p>
+
+  <p>A research project that studies the behavioral patterns of <em>League of Legends</em>
+  laners across regions and ranked tiers, using the official
+  <a href="https://developer.riotgames.com/">Riot Games API</a>. This site is the
+  product page for our Riot API key application.</p>
+
+  <h2>Goals</h2>
+  <ul>
+    <li>Group laner play styles into a small set of <strong>behavioral archetypes</strong>
+        via unsupervised clustering.</li>
+    <li>Measure how archetypes shift across <strong>tiers</strong> (Iron → Challenger).</li>
+    <li>Measure how they shift across <strong>regions</strong> (KR, NA, EU, LATAM, …).</li>
+  </ul>
+
+  <h2>Data</h2>
+  <ul>
+    <li>~300 laners per role, per tier, per region.</li>
+    <li>Aggregated Ranked Solo/Duo (queue 420) metrics from the
+        <strong>2025 competitive splits (Split 1 &amp; 2)</strong>.</li>
+    <li>APIs: LEAGUE-V4, MATCH-V5, SUMMONER-V4.</li>
+  </ul>
+
+  <h2>How it helps players &amp; League of Legends</h2>
+  <p>By showing the concrete behavioral patterns that distinguish higher tiers — per role
+  and region — the study aims to give players measurable paths to improve and to provide a
+  policy-compliant resource for coaching, meta understanding, and balance/matchmaking
+  research.</p>
+
+  <h2>Privacy &amp; compliance</h2>
+  <p>Results are reported only in aggregate. PUUIDs are used transiently and
+  <strong>never published</strong>; no raw player data is exposed.</p>
+
+  <h2>Related research</h2>
+  <p>This work builds on prior studies applying data clustering to learner and game-player
+  behavioral patterns:</p>
+  <ul>
+    <li>Park &amp; Kim (2022), <a href="https://www.mdpi.com/2071-1050/14/23/15574">Learning
+        Performance Styles in Gamified College Classes Using Data Clustering</a>,
+        <em>Sustainability</em> 14(23):15574.</li>
+    <li>Park &amp; Kim (2022), <a href="https://www.mdpi.com/2076-3417/12/23/12451">K-RBBSO
+        Algorithm: A Result-Based Stochastic Search Algorithm in Big Data</a>,
+        <em>Applied Sciences</em> 12(23):12451.</li>
+    <li>Park et al. (2017), <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07425649">Data
+        Clustering-Based Analysis of Player Types in Gamification Environments</a>,
+        <em>J. Korea Game Society</em> 17(6).</li>
+  </ul>
+
+  <h2>Links</h2>
+  <ul>
+    <li><strong><a href="research-introduce.html">Research introduction (full)</a></strong></li>
+    <li>Source &amp; full proposal:
+        <a href="https://github.com/sungjinpark-vibe/lol_player_type">github.com/sungjinpark-vibe/lol_player_type</a></li>
+    <li><a href="https://github.com/sungjinpark-vibe/lol_player_type/blob/main/TERMS.md">Terms of Service</a>
+        · <a href="https://github.com/sungjinpark-vibe/lol_player_type/blob/main/PRIVACY.md">Privacy Policy</a></li>
+    <li>Contact: <a href="mailto:say121290@gmail.com">say121290@gmail.com</a></li>
+  </ul>
+
+  <footer>
+    This project isn't endorsed by Riot Games and doesn't reflect the views of Riot Games.
+    League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc.
+  </footer>
+</body>
+</html>
